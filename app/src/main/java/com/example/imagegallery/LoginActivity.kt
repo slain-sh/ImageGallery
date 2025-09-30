@@ -12,11 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         val showPasswordCheckbox = findViewById<CheckBox>(R.id.checkboxShowPassword)
         val passwordEditTexts: Array<EditText> = arrayOf(passwordEditText, confirmPasswordEditText)
         val loginButton = findViewById<Button>(R.id.buttonLogin)
-
 
         // Toggle hide/show password feature
         showPasswordCheckbox.setOnClickListener {
@@ -51,6 +50,7 @@ class MainActivity : AppCompatActivity() {
             val password = passwordEditText.text.toString()
             val confirmPassword = confirmPasswordEditText.text.toString()
 
+            // Basic login validation
             if (username.isBlank() || password.isBlank() || confirmPassword.isBlank()) {
                 Toast.makeText(this, "Fill up all fields!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val intent = Intent(this, ImageGrids::class.java)
+            val intent = Intent(this, ImageGridsActivity::class.java)
             intent.putExtra("USERNAME", username)
             startActivity(intent)
         }

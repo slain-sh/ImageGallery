@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImageGallery">
         <activity
-            android:name=".ImageGrids"
+            android:name=".ImageGridsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true"
             android:label="Log In">
             <intent-filter>
