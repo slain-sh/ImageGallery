@@ -13,7 +13,8 @@
         android:theme="@style/Theme.ImageGallery">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="Log In">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
