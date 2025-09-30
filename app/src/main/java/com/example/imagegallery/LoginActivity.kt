@@ -2,10 +2,14 @@ package com.example.imagegallery
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.InputType
+import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +33,7 @@ class LoginActivity : AppCompatActivity() {
         val showPasswordCheckbox = findViewById<CheckBox>(R.id.checkboxShowPassword)
         val passwordEditTexts: Array<EditText> = arrayOf(passwordEditText, confirmPasswordEditText)
         val loginButton = findViewById<Button>(R.id.buttonLogin)
+        val loginProgressBar = findViewById<ProgressBar>(R.id.progressBarLogin)
 
         // Toggle hide/show password feature
         showPasswordCheckbox.setOnClickListener {
@@ -44,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // Launch image grids activity on log in
+        // Handle login press
         loginButton.setOnClickListener {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
@@ -59,9 +64,19 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val intent = Intent(this, ImageGridsActivity::class.java)
-            intent.putExtra("USERNAME", username)
-            startActivity(intent)
+            loginProgressBar.visibility = View.VISIBLE
+            loginButton.isEnabled = false
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                loginProgressBar.visibility = View.GONE
+                loginButton.isEnabled = true
+
+                // load imageGrid intent and start it
+                val intent = Intent(this, ImageGridsActivity::class.java)
+                intent.putExtra("USERNAME", username)
+                startActivity(intent)
+            }, 2000) // 2 seconds delay
+
         }
     }
 }
