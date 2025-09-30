@@ -1,9 +1,8 @@
 package com.example.imagegallery
 
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.text.InputType
 import android.view.View
 import android.widget.Button
@@ -15,6 +14,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
+const val loadingDelay: Long = 3000
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,16 +71,23 @@ class LoginActivity : AppCompatActivity() {
             loginProgressBar.visibility = View.VISIBLE
             loginButton.isEnabled = false
 
-            Handler(Looper.getMainLooper()).postDelayed({
+            // Animate progress bar
+            val progressAnimator = ObjectAnimator.ofInt(loginProgressBar, "progress", 0, loginProgressBar.max)
+            progressAnimator.duration = loadingDelay
+            progressAnimator.start()
+
+            lifecycleScope.launch {
+                delay(loadingDelay)
+
+                // Run below code after loadingDelay duration
                 loginProgressBar.visibility = View.GONE
                 loginButton.isEnabled = true
 
                 // load imageGrid intent and start it
-                val intent = Intent(this, ImageGridsActivity::class.java)
+                val intent = Intent(this@LoginActivity, ImageGridsActivity::class.java)
                 intent.putExtra("USERNAME", username)
                 startActivity(intent)
-            }, 2000) // 2 seconds delay
-
+            }
         }
     }
 }
