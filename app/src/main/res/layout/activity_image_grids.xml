@@ -8,9 +8,20 @@
     android:orientation="vertical"
     android:padding="24dp"
     tools:context=".LoginActivity">
+
+    <!-- Toggle Button -->
+    <ToggleButton
+        android:id="@+id/toggleGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="Alternative"
+        android:textOff="Original"
+        android:layout_marginBottom="16dp"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <GridLayout
             android:id="@+id/imageGridLayout"
             android:columnCount="2"
@@ -18,63 +29,73 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/imageViewJett"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/jett"
-                android:layout_margin="4dp" />
+                android:background="@drawable/bg_image1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/jett" />
+
             <ImageView
                 android:id="@+id/imageViewTejo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/tejo"
-                android:layout_margin="4dp" />
+                android:background="@drawable/bg_image2"
+                android:scaleType="centerCrop"
+                android:src="@drawable/tejo" />
+
             <ImageView
                 android:id="@+id/imageViewDeadlock"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/deadlock"
-                android:layout_margin="4dp" />
+                android:background="@drawable/bg_image3"
+                android:scaleType="centerCrop"
+                android:src="@drawable/deadlock" />
+
             <ImageView
                 android:id="@+id/imageViewIso"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/iso"
-                android:layout_margin="4dp" />
+                android:background="@drawable/bg_image4"
+                android:scaleType="centerCrop"
+                android:src="@drawable/iso" />
+
             <ImageView
                 android:id="@+id/imageViewSova"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/sova"
-                android:layout_margin="4dp" />
+                android:background="@drawable/bg_image5"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sova" />
+
             <ImageView
                 android:id="@+id/imageViewKilljoy"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/killjoy"
-                android:layout_margin="4dp" />
+                android:background="@drawable/bg_image6"
+                android:scaleType="centerCrop"
+                android:src="@drawable/killjoy" />
 
         </GridLayout>
-
     </ScrollView>
-
 </LinearLayout>
