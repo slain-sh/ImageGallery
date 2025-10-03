@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImageGallery">
         <activity
+            android:name=".DeadlockDesc"
+            android:exported="false" />
+        <activity
+            android:name=".IsoDesc"
+            android:exported="false" />
+        <activity
             android:name=".ImageGridsActivity"
             android:exported="false" />
         <activity

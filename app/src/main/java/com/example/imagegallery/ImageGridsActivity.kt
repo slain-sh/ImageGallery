@@ -1,5 +1,6 @@
 package com.example.imagegallery
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.ToggleButton
@@ -114,6 +115,16 @@ class ImageGridsActivity : AppCompatActivity() {
                 imageViewSova.setImageResource(R.drawable.sova)
                 imageViewKilljoy.setImageResource(R.drawable.killjoy)
             }
+        }
+
+        // agent descriptions
+        imageViewIso.setOnClickListener { v ->
+            val intent = Intent(this, IsoDesc::class.java)
+            startActivity(intent)
+        }
+        imageViewDeadlock.setOnClickListener { v ->
+            val intent = Intent(this, DeadlockDesc::class.java)
+            startActivity(intent)
         }
     }
 }
