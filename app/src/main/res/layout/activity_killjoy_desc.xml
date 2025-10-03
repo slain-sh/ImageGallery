@@ -8,41 +8,173 @@
     tools:context=".KilljoyDesc">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFDE3B"
+        android:orientation="vertical"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <androidx.gridlayout.widget.GridLayout
+        <TextView
+            android:id="@+id/agentTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:orientation="vertical">
+            android:background="#26947B"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="KILLJOY"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="204dp"
-                android:layout_height="408dp"
-                app:layout_column="0"
-                app:layout_row="0"
-                app:srcCompat="@drawable/killjoy_desc" />
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#FFFFFF"
+                android:scaleType="fitCenter"
+                android:src="@drawable/killjoy_desc" />
 
             <CalendarView
                 android:id="@+id/calendarView"
-                android:layout_width="204dp"
-                android:layout_height="408dp"
-                app:layout_column="1"
-                app:layout_row="0" />
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1" />
 
-        </androidx.gridlayout.widget.GridLayout>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="177dp"
+            android:layout_height="wrap_content"
+            android:background="#FBFBFB"
+            android:padding="16dp"
             android:text="The genius of Germany, Killjoy effortlessly secures key battlefield positions with her arsenal of inventions. If their damage doesn't take her enemies out, the debuff her robots provide will make short work of them."
-            app:layout_column="0"
-            app:layout_row="1" />
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/skill1Icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="#000000"
+                    android:contentDescription="Skill 1"
+                    android:src="@drawable/killjoy_skill1" />
+
+                <TextView
+                    android:id="@+id/skill1Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Nanoswarm"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Skill 3 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/skill2Icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="#000000"
+                    android:contentDescription="Skill 2"
+                    android:src="@drawable/killjoy_skill2" />
+
+                <TextView
+                    android:id="@+id/skill2Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Alarmbot"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/skill3Icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="#020202"
+                    android:contentDescription="Skill 3"
+                    android:src="@drawable/killjoy_skill3" />
+
+                <TextView
+                    android:id="@+id/skill3Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Turret"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Skill 4 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/skill4Icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="#0B0B0B"
+                    android:contentDescription="Skill 4"
+                    android:src="@drawable/killjoy_skill4" />
+
+                <TextView
+                    android:id="@+id/skill4Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lockdown"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
