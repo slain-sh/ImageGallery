@@ -76,10 +76,10 @@ class LoginActivity : AppCompatActivity() {
             progressAnimator.duration = loadingDelay
             progressAnimator.start()
 
+            // Run below code after delay duration
             lifecycleScope.launch {
                 delay(loadingDelay)
 
-                // Run below code after loadingDelay duration
                 loginProgressBar.visibility = View.GONE
                 loginButton.isEnabled = true
 
