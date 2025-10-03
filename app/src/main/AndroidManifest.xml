@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImageGallery">
         <activity
+            android:name=".TejoDesc"
+            android:exported="false" />
+        <activity
             android:name=".SovaDesc"
             android:exported="false" />
         <activity

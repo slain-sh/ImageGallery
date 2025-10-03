@@ -117,6 +117,22 @@ class ImageGridsActivity : AppCompatActivity() {
             }
         }
 
+        // Jett
+        imageViewJett.setOnClickListener { v -> val intent =
+            Intent(this, JettDesc::class.java)
+            startActivity(intent) }
+
+        // Tejo
+        imageViewTejo.setOnClickListener { v -> val intent =
+            Intent(this, TejoDesc::class.java)
+            startActivity(intent) }
+
+        // Deadlock
+
+
+        // Iso
+
+
         // Killjoy
         imageViewKilljoy.setOnClickListener { v -> val intent =
             Intent(this, KilljoyDesc::class.java)
@@ -125,11 +141,6 @@ class ImageGridsActivity : AppCompatActivity() {
         // Sova
         imageViewSova.setOnClickListener { v -> val intent =
             Intent(this, SovaDesc::class.java)
-            startActivity(intent) }
-
-        // Jett
-        imageViewJett.setOnClickListener { v -> val intent =
-            Intent(this, JettDesc::class.java)
             startActivity(intent) }
 
     }
