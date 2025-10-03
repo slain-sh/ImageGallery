@@ -1,21 +1,23 @@
 package com.example.imagegallery
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.ToggleButton
+import android.view.View
+import android.widget.*
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.widget.RadioGroup
-import android.widget.GridLayout
-import android.widget.Switch
 import androidx.appcompat.app.AppCompatDelegate
-
 
 class ImageGridsActivity : AppCompatActivity() {
     private lateinit var toggleGallery: ToggleButton
+    private lateinit var toggleVolume: ToggleButton
+    private lateinit var volumeLayout: LinearLayout
+    private lateinit var volumeSeekBar: SeekBar
+    private lateinit var volumePercent: TextView
+    private var mediaPlayer: MediaPlayer? = null
 
     private lateinit var imageViewJett: ImageView
     private lateinit var imageViewTejo: ImageView
@@ -35,8 +37,8 @@ class ImageGridsActivity : AppCompatActivity() {
             insets
         }
 
+        // Theme switch
         val switchThemeToggle = findViewById<Switch>(R.id.switchThemeToggle)
-
         switchThemeToggle.isChecked = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
         switchThemeToggle.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -49,13 +51,15 @@ class ImageGridsActivity : AppCompatActivity() {
         val agentRoleRadioGroup = findViewById<RadioGroup>(R.id.AgentRolesRadioGroup)
         val gridLayout = findViewById<GridLayout>(R.id.imageGridLayout)
 
-        imageViewJett = findViewById<ImageView>(R.id.imageViewJett)
-        imageViewTejo = findViewById<ImageView>(R.id.imageViewTejo)
-        imageViewDeadlock = findViewById<ImageView>(R.id.imageViewDeadlock)
-        imageViewIso = findViewById<ImageView>(R.id.imageViewIso)
-        imageViewSova = findViewById<ImageView>(R.id.imageViewSova)
-        imageViewKilljoy = findViewById<ImageView>(R.id.imageViewKilljoy)
+        // ImageViews
+        imageViewJett = findViewById(R.id.imageViewJett)
+        imageViewTejo = findViewById(R.id.imageViewTejo)
+        imageViewDeadlock = findViewById(R.id.imageViewDeadlock)
+        imageViewIso = findViewById(R.id.imageViewIso)
+        imageViewSova = findViewById(R.id.imageViewSova)
+        imageViewKilljoy = findViewById(R.id.imageViewKilljoy)
 
+        // Add images to grid
         gridLayout.removeAllViews()
         gridLayout.addView(imageViewJett)
         gridLayout.addView(imageViewTejo)
@@ -64,6 +68,7 @@ class ImageGridsActivity : AppCompatActivity() {
         gridLayout.addView(imageViewSova)
         gridLayout.addView(imageViewKilljoy)
 
+        // Radio group filter
         agentRoleRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 R.id.radioAll -> {
@@ -75,19 +80,16 @@ class ImageGridsActivity : AppCompatActivity() {
                     gridLayout.addView(imageViewSova)
                     gridLayout.addView(imageViewKilljoy)
                 }
-
                 R.id.radioDuelist -> {
                     gridLayout.removeAllViews()
                     gridLayout.addView(imageViewJett)
                     gridLayout.addView(imageViewIso)
                 }
-
                 R.id.radioSentinel -> {
                     gridLayout.removeAllViews()
                     gridLayout.addView(imageViewDeadlock)
                     gridLayout.addView(imageViewKilljoy)
                 }
-
                 R.id.radioInitiator -> {
                     gridLayout.removeAllViews()
                     gridLayout.addView(imageViewTejo)
@@ -96,10 +98,10 @@ class ImageGridsActivity : AppCompatActivity() {
             }
         }
 
+        // Toggle gallery images
         toggleGallery = findViewById(R.id.toggleGallery)
         toggleGallery.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                // Alternative images
                 imageViewJett.setImageResource(R.drawable.jett_alt)
                 imageViewTejo.setImageResource(R.drawable.tejo_alt)
                 imageViewDeadlock.setImageResource(R.drawable.deadlock_alt)
@@ -107,7 +109,6 @@ class ImageGridsActivity : AppCompatActivity() {
                 imageViewSova.setImageResource(R.drawable.sova_alt)
                 imageViewKilljoy.setImageResource(R.drawable.killjoy_alt)
             } else {
-                // Original images
                 imageViewJett.setImageResource(R.drawable.jett)
                 imageViewTejo.setImageResource(R.drawable.tejo)
                 imageViewDeadlock.setImageResource(R.drawable.deadlock)
@@ -117,10 +118,49 @@ class ImageGridsActivity : AppCompatActivity() {
             }
         }
 
-        imageViewKilljoy.setOnClickListener { v -> val intent =
-            Intent(this, KilljoyDesc::class.java)
-            startActivity(intent) }
+        // Killjoy description
+        imageViewKilljoy.setOnClickListener {
+            val intent = Intent(this, KilljoyDesc::class.java)
+            startActivity(intent)
+        }
 
+        // --- BGM + SeekBar Implementation (matches the XML you gave) ---
+        toggleVolume = findViewById(R.id.toggleVolume)          // Toggle beside gallery toggle
+        volumeLayout = findViewById(R.id.volumeLayout)          // whole layout containing seekbar + percent
+        volumeSeekBar = findViewById(R.id.volumeSeekBar)        // SeekBar id in XML
+        volumePercent = findViewById(R.id.volumePercent)        // TextView id in XML (you used volumePercent)
 
+        // Setup MediaPlayer (put your mp3 in res/raw/background_music.mp3)
+        mediaPlayer = MediaPlayer.create(this, R.raw.background_music)
+        mediaPlayer?.isLooping = true
+        mediaPlayer?.start() // music plays (keeps playing even if seekbar hidden)
+
+        // initial volume 50%
+        volumeSeekBar.max = 100
+        volumeSeekBar.progress = 50
+        mediaPlayer?.setVolume(0.5f, 0.5f)
+        volumePercent.text = "50%"
+
+        // SeekBar controls mediaPlayer volume
+        volumeSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                val volume = progress / 100f
+                mediaPlayer?.setVolume(volume, volume)
+                volumePercent.text = "$progress%"
+            }
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        // Toggle shows/hides the volumeLayout only — music continues playing
+        toggleVolume.setOnCheckedChangeListener { _, isChecked ->
+            volumeLayout.visibility = if (isChecked) View.VISIBLE else View.GONE
+        }
+    }
+
+    override fun onDestroy() {
+        mediaPlayer?.release()
+        mediaPlayer = null
+        super.onDestroy()
     }
 }
