@@ -15,11 +15,11 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <RadioGroup
-            android:id="@+id/AgentRolesRadioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <RadioGroup
+        android:id="@+id/AgentRolesRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radioAll"
@@ -63,19 +63,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="2"
+            android:rowCount="3"
             android:orientation="horizontal"
-            android:rowCount="3">
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/imageViewJett"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:layout_margin="4dp"
-                android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/jett" />
-
+                android:adjustViewBounds="true"
+                android:src="@drawable/jett"
+                android:layout_margin="4dp" />
             <ImageView
                 android:id="@+id/imageViewTejo"
                 android:layout_width="0dp"
@@ -84,38 +84,36 @@
                 android:layout_margin="4dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/tejo" />
-
+                android:adjustViewBounds="true"
+                android:src="@drawable/tejo"
+                android:layout_margin="4dp" />
             <ImageView
                 android:id="@+id/imageViewDeadlock"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:layout_margin="4dp"
-                android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/deadlock" />
-
+                android:adjustViewBounds="true"
+                android:src="@drawable/deadlock"
+                android:layout_margin="4dp" />
             <ImageView
                 android:id="@+id/imageViewIso"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:layout_margin="4dp"
-                android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/iso" />
-
+                android:adjustViewBounds="true"
+                android:src="@drawable/iso"
+                android:layout_margin="4dp" />
             <ImageView
                 android:id="@+id/imageViewSova"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:layout_margin="4dp"
-                android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/sova" />
-
+                android:adjustViewBounds="true"
+                android:src="@drawable/sova"
+                android:layout_margin="4dp" />
             <ImageView
                 android:id="@+id/imageViewKilljoy"
                 android:layout_width="0dp"
