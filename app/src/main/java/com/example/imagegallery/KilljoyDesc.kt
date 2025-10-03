@@ -1,6 +1,7 @@
 package com.example.imagegallery
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.CalendarView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -35,5 +36,13 @@ class KilljoyDesc : AppCompatActivity() {
         calendarView.isEnabled = false
         calendarView.setOnDateChangeListener { _, _, _, _ ->
         }
+
+        // Back Button
+        val backButton = findViewById<Button>(R.id.backButton)
+        backButton.setOnClickListener {
+            finish()
+        }
+
+
     }
 }
