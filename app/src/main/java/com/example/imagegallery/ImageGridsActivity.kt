@@ -1,11 +1,12 @@
 package com.example.imagegallery
 
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.ToggleButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.widget.ImageView
 import android.widget.RadioGroup
 import android.widget.GridLayout
 import android.widget.Switch
@@ -13,6 +14,17 @@ import androidx.appcompat.app.AppCompatDelegate
 
 
 class ImageGridsActivity : AppCompatActivity() {
+
+    // Declare the views
+    private lateinit var toggleGallery: ToggleButton
+
+    private lateinit var imageViewJett: ImageView
+    private lateinit var imageViewTejo: ImageView
+    private lateinit var imageViewDeadlock: ImageView
+    private lateinit var imageViewIso: ImageView
+    private lateinit var imageViewSova: ImageView
+    private lateinit var imageViewKilljoy: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -82,6 +94,30 @@ class ImageGridsActivity : AppCompatActivity() {
                     gridLayout.addView(imageViewTejo)
                     gridLayout.addView(imageViewSova)
                 }
+            }
+        }
+
+        // Bind views
+        toggleGallery = findViewById(R.id.toggleGallery)
+
+        // Handle toggle switch
+        toggleGallery.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                // Alternative images
+                imageViewJett.setImageResource(R.drawable.jett_alt)
+                imageViewTejo.setImageResource(R.drawable.tejo_alt)
+                imageViewDeadlock.setImageResource(R.drawable.deadlock_alt)
+                imageViewIso.setImageResource(R.drawable.iso_alt)
+                imageViewSova.setImageResource(R.drawable.sova_alt)
+                imageViewKilljoy.setImageResource(R.drawable.killjoy_alt)
+            } else {
+                // Original images
+                imageViewJett.setImageResource(R.drawable.jett)
+                imageViewTejo.setImageResource(R.drawable.tejo)
+                imageViewDeadlock.setImageResource(R.drawable.deadlock)
+                imageViewIso.setImageResource(R.drawable.iso)
+                imageViewSova.setImageResource(R.drawable.sova)
+                imageViewKilljoy.setImageResource(R.drawable.killjoy)
             }
         }
     }
