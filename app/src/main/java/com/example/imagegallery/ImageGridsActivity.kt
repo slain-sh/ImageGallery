@@ -121,6 +121,10 @@ class ImageGridsActivity : AppCompatActivity() {
             Intent(this, KilljoyDesc::class.java)
             startActivity(intent) }
 
+        imageViewJett.setOnClickListener { v -> val intent =
+            Intent(this, JettDesc::class.java)
+            startActivity(intent) }
+
 
     }
 }
