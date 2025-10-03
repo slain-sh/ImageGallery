@@ -5,104 +5,126 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     android:orientation="vertical"
-    android:layout_margin="24dp"
+    android:gravity="center_horizontal"
     tools:context=".LoginActivity">
-
-    <RadioGroup
-        android:id="@+id/AgentRolesRadioGroup"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/radioAll"
+        <RadioGroup
+            android:id="@+id/AgentRolesRadioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="All"
-            android:checked="true"/>
+            android:orientation="horizontal">
 
-        <RadioButton android:id="@+id/radioDuelist"
+            <RadioButton
+                android:id="@+id/radioAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="All" />
+
+            <RadioButton
+                android:id="@+id/radioDuelist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duelist" />
+
+            <RadioButton
+                android:id="@+id/radioSentinel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sentinel" />
+
+            <RadioButton
+                android:id="@+id/radioInitiator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Initiator" />
+        </RadioGroup>
+
+        <Switch
+            android:layout_margin="4dp"
+            android:id="@+id/switchThemeToggle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Duelist" />
-
-        <RadioButton android:id="@+id/radioSentinel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sentinel" />
-
-        <RadioButton android:id="@+id/radioInitiator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Initiator" />
-
-    </RadioGroup>
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <GridLayout
             android:id="@+id/imageGridLayout"
-            android:columnCount="2"
-            android:rowCount="3"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:rowCount="3">
+
             <ImageView
                 android:id="@+id/imageViewJett"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/jett"
-                android:layout_margin="4dp" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/jett" />
+
             <ImageView
                 android:id="@+id/imageViewTejo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/tejo"
-                android:layout_margin="4dp" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/tejo" />
+
             <ImageView
                 android:id="@+id/imageViewDeadlock"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/deadlock"
-                android:layout_margin="4dp" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/deadlock" />
+
             <ImageView
                 android:id="@+id/imageViewIso"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/iso"
-                android:layout_margin="4dp" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/iso" />
+
             <ImageView
                 android:id="@+id/imageViewSova"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/sova"
-                android:layout_margin="4dp" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/sova" />
+
             <ImageView
                 android:id="@+id/imageViewKilljoy"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:scaleType="fitCenter"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/killjoy"
-                android:layout_margin="4dp" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/killjoy" />
 
         </GridLayout>
 

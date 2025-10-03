@@ -8,6 +8,9 @@ import androidx.core.view.WindowInsetsCompat
 import android.widget.ImageView
 import android.widget.RadioGroup
 import android.widget.GridLayout
+import android.widget.Switch
+import androidx.appcompat.app.AppCompatDelegate
+
 
 class ImageGridsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +33,17 @@ class ImageGridsActivity : AppCompatActivity() {
         val imageViewIso = findViewById<ImageView>(R.id.imageViewIso)
         val imageViewSova = findViewById<ImageView>(R.id.imageViewSova)
         val imageViewKilljoy = findViewById<ImageView>(R.id.imageViewKilljoy)
+
+        val switchThemeToggle = findViewById<Switch>(R.id.switchThemeToggle)
+
+        switchThemeToggle.isChecked = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+        switchThemeToggle.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
 
         gridLayout.removeAllViews()
         gridLayout.addView(imageViewJett)
