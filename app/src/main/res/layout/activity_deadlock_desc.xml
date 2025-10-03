@@ -5,25 +5,238 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeadlockDesc">
+    tools:context=".KilljoyDesc">
 
-    <androidx.gridlayout.widget.GridLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:columnCount="2">
+        android:background="#d4cbc9"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/imageViewDeadlockAvatar"
+        <TextView
+            android:id="@+id/agentTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3d6958"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="DEADLOCK"
+            android:textColor="#FFFFFF"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:weightSum="2">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_image3"
+                android:scaleType="fitCenter"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/deadlock_desc" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/releaseDateLabel"
+                    android:layout_width="184dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#28957C"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="Release Date"
+                    android:textColor="#040404"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:theme="@style/ThemeOverlay.Material3.Light"
+                    tools:background="#FFFFFF" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/deadlock_desc" />
+            android:background="@color/white"
+            android:padding="16dp"
+            android:text="Norwegian operative Deadlock deploys an array of cutting-edge nanowire to secure the battlefield from even the most lethal assault. No one escapes her vigilant watch, nor survives her unyielding ferocity. "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <!-- Skills Group -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
 
-    </androidx.gridlayout.widget.GridLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3d6958"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="15dp"
+                android:paddingBottom="5dp"
+                android:weightSum="4">
+
+                <!-- Skill 1 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/skill1Icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="#000000"
+                        android:contentDescription="Skill 1"
+                        android:padding="5dp"
+                        android:src="@drawable/deadlock_skill1" />
+
+                    <TextView
+                        android:id="@+id/skill1Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Barrier Mesh"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Skill 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/skill2Icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="#000000"
+                        android:contentDescription="Skill 2"
+                        android:padding="5dp"
+                        android:src="@drawable/deadlock_skill2" />
+
+                    <TextView
+                        android:id="@+id/skill2Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Sonic Sensor"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Skill 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/skill3Icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="#020202"
+                        android:contentDescription="Skill 3"
+                        android:padding="5dp"
+                        android:src="@drawable/deadlock_skill3" />
+
+                    <TextView
+                        android:id="@+id/skill3Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="GravNet"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Skill 4 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/skill4Icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="#0B0B0B"
+                        android:contentDescription="Skill 4"
+                        android:padding="5dp"
+                        android:src="@drawable/deadlock_skill4" />
+
+                    <TextView
+                        android:id="@+id/skill4Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Annihilation"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- BACK BUTTON-->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:padding="8dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

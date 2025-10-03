@@ -3,7 +3,7 @@
     <color name="red_200">#FF53212b</color>
     <color name="red_500">#FFff4655</color>
     <color name="red_700">#FFff4654</color>
-    <color name="black">#FF111823</color>
+    <color name="black">#FF111111</color>
     <color name="grey">#FF292929</color>
     <color name="white">#FFece7e1</color>
 </resources>

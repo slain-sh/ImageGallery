@@ -42,7 +42,5 @@ class KilljoyDesc : AppCompatActivity() {
         backButton.setOnClickListener {
             finish()
         }
-
-
     }
 }

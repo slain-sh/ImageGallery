@@ -6,7 +6,8 @@
         android:startColor="#e9f4f7"
         android:endColor="#77d4e4"
         android:angle="45"/> <!-- angle: 0=left-right, 90=top-bottom, 45=diagonal -->
-    <stroke
+    <corners android:radius="12dp"/>
+    <!-- <stroke
         android:width="2dp"
-        android:color="#000000" />
+        android:color="#000000" /> -->
 </shape>
