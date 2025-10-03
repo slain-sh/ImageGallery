@@ -14,8 +14,6 @@ import androidx.appcompat.app.AppCompatDelegate
 
 
 class ImageGridsActivity : AppCompatActivity() {
-
-    // Declare the views
     private lateinit var toggleGallery: ToggleButton
 
     private lateinit var imageViewJett: ImageView
@@ -36,16 +34,6 @@ class ImageGridsActivity : AppCompatActivity() {
             insets
         }
 
-        val agentRoleRadioGroup = findViewById<RadioGroup>(R.id.AgentRolesRadioGroup)
-        val gridLayout = findViewById<GridLayout>(R.id.imageGridLayout)
-
-        val imageViewJett = findViewById<ImageView>(R.id.imageViewJett)
-        val imageViewTejo = findViewById<ImageView>(R.id.imageViewTejo)
-        val imageViewDeadlock = findViewById<ImageView>(R.id.imageViewDeadlock)
-        val imageViewIso = findViewById<ImageView>(R.id.imageViewIso)
-        val imageViewSova = findViewById<ImageView>(R.id.imageViewSova)
-        val imageViewKilljoy = findViewById<ImageView>(R.id.imageViewKilljoy)
-
         val switchThemeToggle = findViewById<Switch>(R.id.switchThemeToggle)
 
         switchThemeToggle.isChecked = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
@@ -56,6 +44,16 @@ class ImageGridsActivity : AppCompatActivity() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }
+
+        val agentRoleRadioGroup = findViewById<RadioGroup>(R.id.AgentRolesRadioGroup)
+        val gridLayout = findViewById<GridLayout>(R.id.imageGridLayout)
+
+        imageViewJett = findViewById<ImageView>(R.id.imageViewJett)
+        imageViewTejo = findViewById<ImageView>(R.id.imageViewTejo)
+        imageViewDeadlock = findViewById<ImageView>(R.id.imageViewDeadlock)
+        imageViewIso = findViewById<ImageView>(R.id.imageViewIso)
+        imageViewSova = findViewById<ImageView>(R.id.imageViewSova)
+        imageViewKilljoy = findViewById<ImageView>(R.id.imageViewKilljoy)
 
         gridLayout.removeAllViews()
         gridLayout.addView(imageViewJett)
@@ -97,10 +95,7 @@ class ImageGridsActivity : AppCompatActivity() {
             }
         }
 
-        // Bind views
         toggleGallery = findViewById(R.id.toggleGallery)
-
-        // Handle toggle switch
         toggleGallery.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 // Alternative images

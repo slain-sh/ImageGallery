@@ -70,6 +70,9 @@
         android:progress="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:progressTint="@color/red_500"
+        android:progressBackgroundTint="@color/grey"
+        android:indeterminateTint="@color/red_500"
         android:layout_marginTop="16dp"/>
 
 
