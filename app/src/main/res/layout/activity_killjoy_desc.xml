@@ -59,7 +59,7 @@
 
                 <TextView
                     android:id="@+id/releaseDateLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="184dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="#28957C"
@@ -76,11 +76,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:focusedMonthDateColor="#040404"
-                    android:selectedWeekBackgroundColor="#000000"
-                    android:unfocusedMonthDateColor="#070707"
-                    android:weekNumberColor="#070707"
-                    tools:background="#FFFFFF" />
+                    tools:background="#FFFFFF"
+                    android:theme="@style/ThemeOverlay.Material3.Light"/>
 
             </LinearLayout>
 
@@ -98,6 +95,7 @@
             android:textColor="#020202"
             android:textSize="16sp" />
 
+        <!-- Skills Group -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,6 +104,7 @@
             android:paddingTop="16dp"
             android:weightSum="4">
 
+            <!-- Skill 1 -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -131,7 +130,7 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- Skill 3 -->
+            <!-- Skill 2 -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -157,6 +156,7 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
+            <!-- Skill 3 -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
