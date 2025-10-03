@@ -18,6 +18,9 @@
             android:name=".IsoDesc"
             android:exported="false" />
         <activity
+            android:name=".KilljoyDesc"
+            android:exported="false" />
+        <activity
             android:name=".ImageGridsActivity"
             android:exported="false" />
         <activity

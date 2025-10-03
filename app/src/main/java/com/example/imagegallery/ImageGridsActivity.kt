@@ -126,5 +126,11 @@ class ImageGridsActivity : AppCompatActivity() {
             val intent = Intent(this, DeadlockDesc::class.java)
             startActivity(intent)
         }
+
+        imageViewKilljoy.setOnClickListener { v -> val intent =
+            Intent(this, KilljoyDesc::class.java)
+            startActivity(intent) }
+
+
     }
 }
