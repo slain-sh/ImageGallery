@@ -5,67 +5,67 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".KilljoyDesc">
+    tools:context=".JettDesc">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFDE3B"
+        android:background="#36A8D2"
         android:orientation="vertical"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Agent Title -->
         <TextView
             android:id="@+id/agentTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#26947B"
+            android:background="#1F5487"
             android:gravity="center"
             android:padding="8dp"
-            android:text="KILLJOY"
+            android:text="SOVA"
             android:textColor="#FFFFFF"
             android:textSize="48sp"
             android:textStyle="bold" />
 
+        <!-- Image + Release Date -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2">
 
+            <!-- Agent Image -->
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageViewJett"
                 android:layout_width="0dp"
                 android:layout_height="300dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="@drawable/bg_gradient_killjoy"
+                android:background="@drawable/bg_image5"
                 android:scaleType="fitCenter"
-                android:src="@drawable/killjoy_desc" />
+                android:src="@drawable/sova_desc" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="300dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:layout_margin="8dp"
-                android:background="#FFFFFF">
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/releaseDateLabel"
                     android:layout_width="184dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:background="#28957C"
+                    android:background="#215588"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:paddingBottom="4dp"
                     android:text="Release Date"
                     android:textColor="#040404"
                     android:textSize="16sp"
@@ -76,21 +76,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    tools:background="#FFFFFF"
-                    android:theme="@style/ThemeOverlay.Material3.Light"/>
-
+                    android:theme="@style/ThemeOverlay.Material3.Light"
+                    tools:background="#FFFFFF" />
             </LinearLayout>
-
-
         </LinearLayout>
 
+        <!-- Description -->
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/agentDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FBFBFB"
             android:padding="16dp"
-            android:text="The genius of Germany, Killjoy effortlessly secures key battlefield positions with her arsenal of inventions. If their damage doesn't take her enemies out, the debuff her robots provide will make short work of them."
+            android:text="Born from the eternal winter of Russia's tundra, Sova tracks, finds, and eliminates enemies with ruthless efficiency and precision. His custom bow and incredible scouting abilities ensure that even if you run, you cannot hide."
             android:textAlignment="center"
             android:textColor="#020202"
             android:textSize="16sp" />
@@ -105,7 +103,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#537DE4"
+                android:background="#215588"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:paddingTop="15dp"
@@ -125,16 +123,15 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:background="#000000"
-                        android:contentDescription="Skill 1"
                         android:padding="5dp"
-                        android:src="@drawable/killjoy_skill1" />
+                        android:src="@drawable/sova_skills1" />
 
                     <TextView
                         android:id="@+id/skill1Name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Nanoswarm"
+                        android:text="Owl Drone"
                         android:textColor="#000000"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -152,16 +149,15 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:background="#000000"
-                        android:contentDescription="Skill 2"
                         android:padding="5dp"
-                        android:src="@drawable/killjoy_skill2" />
+                        android:src="@drawable/sova_skills2" />
 
                     <TextView
                         android:id="@+id/skill2Name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Alarmbot"
+                        android:text="Shock Bolt"
                         android:textColor="#000000"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -178,17 +174,16 @@
                         android:id="@+id/skill3Icon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:background="#020202"
-                        android:contentDescription="Skill 3"
+                        android:background="#000000"
                         android:padding="5dp"
-                        android:src="@drawable/killjoy_skill3" />
+                        android:src="@drawable/sova_skills3" />
 
                     <TextView
                         android:id="@+id/skill3Name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Turret"
+                        android:text="Recon Bolt"
                         android:textColor="#000000"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -205,24 +200,21 @@
                         android:id="@+id/skill4Icon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:background="#0B0B0B"
-                        android:contentDescription="Skill 4"
+                        android:background="#000000"
                         android:padding="5dp"
-                        android:src="@drawable/killjoy_skill4" />
+                        android:src="@drawable/sova_skills4" />
 
                     <TextView
                         android:id="@+id/skill4Name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Lockdown"
+                        android:text="Hunter's Fury"
                         android:textColor="#000000"
                         android:textSize="12sp" />
                 </LinearLayout>
-
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 
     <!-- BACK BUTTON-->
@@ -236,6 +228,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,11 +9,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.util.*
 
-class KilljoyDesc : AppCompatActivity() {
+class TejoDesc : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_killjoy_desc)
+        setContentView(R.layout.activity_tejo_desc)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -25,7 +25,7 @@ class KilljoyDesc : AppCompatActivity() {
         val calendarView = findViewById<CalendarView>(R.id.calendarView)
 
         val myDate = Calendar.getInstance()
-        myDate.set(2020, Calendar.AUGUST, 4) // Year, Month (0-based), Day
+        myDate.set(2025, Calendar.JANUARY, 8) // Year, Month (0-based), Day
         val dateInMillis = myDate.timeInMillis
 
         calendarView.minDate = dateInMillis

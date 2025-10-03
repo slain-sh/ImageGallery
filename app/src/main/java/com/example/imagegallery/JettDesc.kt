@@ -9,11 +9,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.util.*
 
-class KilljoyDesc : AppCompatActivity() {
+class JettDesc : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_killjoy_desc)
+        setContentView(R.layout.activity_jett_desc)
+        // ↑ CHANGE: link to jett xml (activity_jett_desc.xml)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -21,20 +22,20 @@ class KilljoyDesc : AppCompatActivity() {
             insets
         }
 
-        // Fixed Calendar no Actions/Events
+        // Fixed Calendar for Jett release date
         val calendarView = findViewById<CalendarView>(R.id.calendarView)
 
         val myDate = Calendar.getInstance()
-        myDate.set(2020, Calendar.AUGUST, 4) // Year, Month (0-based), Day
+        myDate.set(2020, Calendar.JUNE, 2) // ↑ CHANGE: Jett’s release date (Valorant launch)
         val dateInMillis = myDate.timeInMillis
 
         calendarView.minDate = dateInMillis
         calendarView.maxDate = dateInMillis
-
         calendarView.date = dateInMillis
-
         calendarView.isEnabled = false
+
         calendarView.setOnDateChangeListener { _, _, _, _ ->
+            // no action
         }
 
         // Back Button
@@ -42,7 +43,5 @@ class KilljoyDesc : AppCompatActivity() {
         backButton.setOnClickListener {
             finish()
         }
-
-
     }
 }

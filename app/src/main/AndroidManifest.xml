@@ -18,6 +18,15 @@
             android:name=".IsoDesc"
             android:exported="false" />
         <activity
+            android:name=".TejoDesc"
+            android:exported="false" />
+        <activity
+            android:name=".SovaDesc"
+            android:exported="false" />
+        <activity
+            android:name=".JettDesc"
+            android:exported="false" />
+        <activity
             android:name=".KilljoyDesc"
             android:exported="false" />
         <activity

@@ -118,19 +118,36 @@ class ImageGridsActivity : AppCompatActivity() {
         }
 
         // agent descriptions
+        // Iso
         imageViewIso.setOnClickListener { v ->
             val intent = Intent(this, IsoDesc::class.java)
             startActivity(intent)
         }
+        // Deadlock
         imageViewDeadlock.setOnClickListener { v ->
             val intent = Intent(this, DeadlockDesc::class.java)
             startActivity(intent)
         }
 
+        // Jett
+        imageViewJett.setOnClickListener { v -> val intent =
+            Intent(this, JettDesc::class.java)
+            startActivity(intent) }
+
+        // Tejo
+        imageViewTejo.setOnClickListener { v -> val intent =
+            Intent(this, TejoDesc::class.java)
+            startActivity(intent) }
+
+        // Killjoy
         imageViewKilljoy.setOnClickListener { v -> val intent =
             Intent(this, KilljoyDesc::class.java)
             startActivity(intent) }
 
+        // Sova
+        imageViewSova.setOnClickListener { v -> val intent =
+            Intent(this, SovaDesc::class.java)
+            startActivity(intent) }
 
     }
 }
