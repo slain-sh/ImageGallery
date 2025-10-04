@@ -190,6 +190,11 @@ class ImageGridsActivity : AppCompatActivity() {
         toggleVolume.setOnCheckedChangeListener { _, isChecked ->
             volumeLayout.visibility = if (isChecked) View.VISIBLE else View.GONE
         }
+
+        val buttonBack = findViewById<Button>(R.id.backButton)
+        buttonBack.setOnClickListener { v ->
+            finish()
+        }
     }
 
     override fun onDestroy() {

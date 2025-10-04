@@ -132,7 +132,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_weight="1"
+        android:layout_height="0dp">
 
         <GridLayout
             android:id="@+id/imageGridLayout"
@@ -208,5 +209,16 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/killjoy" />
         </GridLayout>
+
     </ScrollView>
+    <!-- BACK BUTTON-->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Login"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp" />
 </LinearLayout>
