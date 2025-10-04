@@ -35,7 +35,7 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:label="Log In">
+            android:label="Image Gallery">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
