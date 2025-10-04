@@ -72,32 +72,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="All" />
+                android:text="All"
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/radioDuelist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Duelist" />
+                android:text="Duelist"
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/radioSentinel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sentinel" />
+                android:text="Sentinel"
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/radioInitiator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Initiator" />
+                android:text="Initiator"
+                android:textSize="12sp" />
         </RadioGroup>
 
         <Switch
-            android:layout_margin="4dp"
             android:id="@+id/switchThemeToggle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp" />
     </LinearLayout>
 
     <!-- Image Grid -->

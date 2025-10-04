@@ -153,7 +153,10 @@ class ImageGridsActivity : AppCompatActivity() {
         imageViewKilljoy.setOnClickListener { v -> val intent =
             Intent(this, KilljoyDesc::class.java)
             startActivity(intent) }
-
+        // Sova
+        imageViewSova.setOnClickListener { v -> val intent =
+            Intent(this, SovaDesc::class.java)
+            startActivity(intent) }
         // --- BGM + SeekBar Implementation (matches the XML you gave) ---
         toggleVolume = findViewById(R.id.toggleVolume)          // Toggle beside gallery toggle
         volumeLayout = findViewById(R.id.volumeLayout)          // whole layout containing seekbar + percent
@@ -171,10 +174,7 @@ class ImageGridsActivity : AppCompatActivity() {
         mediaPlayer?.setVolume(0.5f, 0.5f)
         volumePercent.text = "50%"
 
-        // Sova
-        imageViewSova.setOnClickListener { v -> val intent =
-            Intent(this, SovaDesc::class.java)
-            startActivity(intent) }
+
         // SeekBar controls mediaPlayer volume
         volumeSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
