@@ -8,18 +8,64 @@
     android:layout_margin="16dp"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".LoginActivity">
+    tools:context=".ImageGridsActivity">
+
+    <!-- Two toggle buttons side by side -->
+
+    <!-- Volume Controls (Initially Hidden) -->
+    <LinearLayout
+        android:id="@+id/volumeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Volume Icon -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_lock_silent_mode_off"
+                android:contentDescription="Volume Icon"
+                android:layout_marginEnd="8dp" />
+
+            <!-- SeekBar -->
+            <SeekBar
+                android:id="@+id/volumeSeekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="50" />
+        </LinearLayout>
+
+        <!-- Percentage Label -->
+        <TextView
+            android:id="@+id/volumePercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50%" />
+    </LinearLayout>
+
+    <!-- Radio buttons and theme switch -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-    <RadioGroup
-        android:id="@+id/AgentRolesRadioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        <RadioGroup
+            android:id="@+id/AgentRolesRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radioAll"
@@ -54,15 +100,31 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-
-    <!-- Toggle Button -->
-    <ToggleButton
-        android:id="@+id/toggleGallery"
-        android:layout_width="wrap_content"
+    <!-- Image Grid -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textOn="Alternative"
-        android:textOff="Original"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="12dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <!-- Gallery Toggle -->
+        <ToggleButton
+            android:id="@+id/toggleGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textOff="Original"
+            android:textOn="Alternative" />
+
+        <!-- Volume Toggle -->
+        <ToggleButton
+            android:id="@+id/toggleVolume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="Show Volume"
+            android:textOn="Hide Volume" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -141,7 +203,6 @@
                 android:background="@drawable/bg_image6"
                 android:scaleType="fitCenter"
                 android:src="@drawable/killjoy" />
-
         </GridLayout>
     </ScrollView>
 </LinearLayout>
